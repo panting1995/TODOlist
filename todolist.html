@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Todolist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+  
+</head>
+<body>
+        
+    <header>
+        <ul class="nav nav-pills" role="tablist">
+                
+                <li class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <label class="link" id="pills-tasks-tab" data-toggle="pill" href="#pills-task" role="tab" aria-controls="pills-task" aria-selected="false">My Tasks</label>
+                </li>
+                <li class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                  <label class="link"  id="pills-progress-tab" data-toggle="pill" href="#pills-progress" role="tab" aria-controls="pills-progress" aria-selected="false">In Progress</label>
+                </li>
+                <li class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <label class="link"  id="pills-completed-tab" data-toggle="pill" href="#pills-completed" role="tab" aria-controls="pills-completed" aria-selected="false">Completed</label>
+                </li>
+        </ul>
+    </header>
+
+
+    <div class="col-xl-12">
+        <div class="tab-content">
+            <div class="tab-pane fade show active col-xl-12 add" id="pills-task" role="tabpanel" aria-labelledby="pills-tasks-tab">
+                 <!--新增事項-->
+                <div class="input-group col-xl-6 center">
+                    <div class="input-group-prepend center">
+                            <span class="input-group-text" id="inputGroup-sizing-default">+ Add</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <!--事項清單-->
+                <div class="card col-xl-6 center">
+                    <div class="card-header-star">
+                        <div class="todo">
+                            <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <span class="type">Type Something Here...</span>
+                            <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">                          
+                            <i class="fas fa-pencil-alt icon"></i>
+                            </a>
+                            <i class="fas fa-star staricon"></i>        
+                        </div>
+                        <div class="todo2">
+                            <i class="fas fa-calendar-alt detail_icon"> <span class="date">5/14</span></i>
+                            <i class="far fa-file detail_icon"></i>
+                            <i class="fas fa-comment detail_icon"></i>
+                        </div>                            
+                    </div>  
+                    
+                    <div class="collapse" id="collapseExample">
+                        <div class="card-body">                            
+                            <form>
+                                <div class="form-group rewrite">
+                                    <div>
+                                        <i class="fas fa-calendar-alt detail_icon"></i>
+                                        <span class="date">Deadline</span>
+                                    </div>
+                                    <input type="date" class="form-control" placeholder="Date">
+                                    <input type="datetime" class="form-control" id="inputPassword2" placeholder="Time">                                   
+                                </div> 
+                                <div class="form-group rewrite">    
+                                        <i class="far fa-file detail_icon"></i>
+                                        <span class="date">File</span>
+                                    <div class="filename">aaaaaaa.zip
+                                        <i class="fas fa-plus-square icon-addfile"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group rewrite">
+                                    <i class="fas fa-comment detail_icon"></i>
+                                    <span class="date">Comment</span>
+                                    <div>
+                                        <textarea rows="3" class="col-xl-6"></textarea>
+                                    </div>
+                                </div>         
+                            </form>                                 
+                        </div>
+                        <button type="submit" class="btn col-xl-6">Save</button>
+                        <button type="reset" class="btn col-xl-6">Cancel</button>
+                        
+                    </div>
+                        
+                </div>
+                <!--Next card-->
+                <!--事項清單-->
+                <div class="card col-xl-6 center">
+                        <div class="card-header-star">
+                            <div class="todo">
+                                <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <span class="type">Type Something Here...</span>
+                                <a data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">                          
+                                <i class="fas fa-pencil-alt icon"></i>
+                                </a>
+                                <i class="fas fa-star staricon"></i>        
+                            </div>
+                            <div class="todo2">
+                                <i class="fas fa-calendar-alt detail_icon"> <span class="date">5/14</span></i>
+                                <i class="far fa-file detail_icon"></i>
+                                <i class="fas fa-comment detail_icon"></i>
+                            </div>                            
+                        </div>  
+                        
+                        <div class="collapse" id="collapseExample2">
+                            <div class="card-body">                            
+                                <form>
+                                    <div class="form-group rewrite">
+                                        <div>
+                                            <i class="fas fa-calendar-alt detail_icon"></i>
+                                            <span class="date">Deadline</span>
+                                        </div>
+                                        <input type="date" class="form-control" placeholder="Date">
+                                        <input type="datetime" class="form-control" id="inputPassword2" placeholder="Time">                                   
+                                    </div> 
+                                    <div class="form-group rewrite">    
+                                            <i class="far fa-file detail_icon"></i>
+                                            <span class="date">File</span>
+                                        <div class="filename">aaaaaaa.zip
+                                            <i class="fas fa-plus-square icon-addfile"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group rewrite">
+                                        <i class="fas fa-comment detail_icon"></i>
+                                        <span class="date">Comment</span>
+                                        <div>
+                                            <textarea rows="3" class="col-xl-6"></textarea>
+                                        </div>
+                                    </div>         
+                                </form>                                 
+                            </div>
+                            <button type="submit" class="btn col-xl-6">Save</button>
+                            <button type="reset" class="btn col-xl-6">Cancel</button>
+                            
+                        </div>
+                            
+                    </div>
+                    <!--Next card-->
+              
+                    <!--事項清單-->
+                    <div class="card col-xl-6 center">
+                        <div class="card-header">
+                            <div class="todo">
+                                <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <span class="type">Type Something Here...</span>
+                                <a data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">                          
+                                <i class="fas fa-pencil-alt icon"></i>
+                                </a>
+                                <i class="far fa-star staricon"></i>        
+                            </div>
+                            <div class="todo2">
+                                <i class="fas fa-calendar-alt detail_icon"> <span class="date">5/14</span></i>
+                                <i class="far fa-file detail_icon"></i>
+                                <i class="fas fa-comment detail_icon"></i>
+                            </div>                            
+                        </div>  
+                        
+                        <div class="collapse" id="collapseExample3">
+                            <div class="card-body">                            
+                                <form>
+                                    <div class="form-group rewrite">
+                                        <div>
+                                            <i class="fas fa-calendar-alt detail_icon"></i>
+                                            <span class="date">Deadline</span>
+                                        </div>
+                                        <input type="date" class="form-control" placeholder="Date">
+                                        <input type="datetime" class="form-control" id="inputPassword2" placeholder="Time">                                   
+                                    </div> 
+                                    <div class="form-group rewrite">    
+                                            <i class="far fa-file detail_icon"></i>
+                                            <span class="date">File</span>
+                                        <div class="filename">aaaaaaa.zip
+                                            <i class="fas fa-plus-square icon-addfile"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group rewrite">
+                                        <i class="fas fa-comment detail_icon"></i>
+                                        <span class="date">Comment</span>
+                                        <div>
+                                            <textarea rows="3" class="col-xl-6"></textarea>
+                                        </div>
+                                    </div>         
+                                </form>                                 
+                            </div>
+                            <button type="submit" class="btn col-xl-6">Save</button>
+                            <button type="reset" class="btn col-xl-6">Cancel</button>
+                            
+                        </div>
+                            
+                    </div>
+                    <!--next card-->
+                    <!--事項清單-->
+                    <div class="card col-xl-6 center">
+                            <div class="card-header">
+                                <div class="todo">
+                                    <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                                    <span class="type">Type Something Here...</span>
+                                    <a data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">                          
+                                    <i class="fas fa-pencil-alt icon"></i>
+                                    </a>
+                                    <i class="far fa-star staricon"></i>        
+                                </div>
+                                <div class="todo2">
+                                    <i class="fas fa-calendar-alt detail_icon"> <span class="date">5/14</span></i>
+                                    <i class="far fa-file detail_icon"></i>
+                                    <i class="fas fa-comment detail_icon"></i>
+                                </div>                            
+                            </div>  
+                            
+                            <div class="collapse" id="collapseExample4">
+                                <div class="card-body">                            
+                                    <form>
+                                        <div class="form-group rewrite">
+                                            <div>
+                                                <i class="fas fa-calendar-alt detail_icon"></i>
+                                                <span class="date">Deadline</span>
+                                            </div>
+                                            <input type="date" class="form-control" placeholder="Date">
+                                            <input type="datetime" class="form-control" id="inputPassword2" placeholder="Time">                                   
+                                        </div> 
+                                        <div class="form-group rewrite">    
+                                                <i class="far fa-file detail_icon"></i>
+                                                <span class="date">File</span>
+                                            <div class="filename">aaaaaaa.zip
+                                                <i class="fas fa-plus-square icon-addfile"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group rewrite">
+                                            <i class="fas fa-comment detail_icon"></i>
+                                            <span class="date">Comment</span>
+                                            <div>
+                                                <textarea rows="3" class="col-xl-6"></textarea>
+                                            </div>
+                                        </div>         
+                                    </form>                                 
+                                </div>
+                                <button type="submit" class="btn col-xl-6">Save</button>
+                                <button type="reset" class="btn col-xl-6">Cancel</button>
+                                
+                            </div>
+                                
+                        </div>
+                        <div class="card col-xl-6 center">
+                                <div class="card-header-line">
+                                    <div class="todo">
+                                            <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <span class="type">Type Something Here...</span>
+                                            <i class="fas fa-pencil-alt icon"></i>
+                                            <i class="far fa-star staricon"></i>  
+                                    </div>    
+                                </div>
+                        </div>
+                </div>
+                
+    <!--In progress清單-->
+    <div class="tab-pane fade col-xl-12 add" id="pills-progress" role="tabpanel"    aria-labelledby="pills-progress-tab">
+          <!--新增事項-->
+          <div class="input-group col-xl-6 center">
+                <div class="input-group-prepend center">
+                        <span class="input-group-text" id="inputGroup-sizing-default">+ Add</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <!--事項清單-->
+            <div class="card col-xl-6 center">
+                <div class="card-header-star">
+                    <div class="todo">
+                        <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <span class="type">Type Something Here...</span>
+                        <a data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">                          
+                        <i class="fas fa-pencil-alt icon"></i>
+                        </a>
+                        <i class="fas fa-star staricon"></i>        
+                    </div>
+                    <div class="todo2">
+                        <i class="fas fa-calendar-alt detail_icon"> <span class="date">5/14</span></i>
+                        <i class="far fa-file detail_icon"></i>
+                        <i class="fas fa-comment detail_icon"></i>
+                    </div>                            
+                </div>  
+                
+                <div class="collapse" id="collapseExample5">
+                    <div class="card-body">                            
+                        <form>
+                            <div class="form-group rewrite">
+                                <div>
+                                    <i class="fas fa-calendar-alt detail_icon"></i>
+                                    <span class="date">Deadline</span>
+                                </div>
+                                <input type="date" class="form-control" placeholder="Date">
+                                <input type="datetime" class="form-control" id="inputPassword2" placeholder="Time">                                   
+                            </div> 
+                            <div class="form-group rewrite">    
+                                    <i class="far fa-file detail_icon"></i>
+                                    <span class="date">File</span>
+                                <div class="filename">aaaaaaa.zip
+                                    <i class="fas fa-plus-square icon-addfile"></i>
+                                </div>
+                            </div>
+                            <div class="form-group rewrite">
+                                <i class="fas fa-comment detail_icon"></i>
+                                <span class="date">Comment</span>
+                                <div>
+                                    <textarea rows="3" class="col-xl-6"></textarea>
+                                </div>
+                            </div>         
+                        </form>                                 
+                    </div>
+                    <button type="submit" class="btn col-xl-6">Save</button>
+                    <button type="reset" class="btn col-xl-6">Cancel</button>
+                    
+                </div>
+                    
+            </div>
+            <!--Next card-->
+            <!--事項清單-->
+            <div class="card col-xl-6 center">
+                    <div class="card-header-star">
+                        <div class="todo">
+                            <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <span class="type">Type Something Here...</span>
+                            <a data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">                          
+                            <i class="fas fa-pencil-alt icon"></i>
+                            </a>
+                            <i class="fas fa-star staricon"></i>        
+                        </div>
+                        <div class="todo2">
+                            <i class="fas fa-calendar-alt detail_icon"> <span class="date">5/14</span></i>
+                            <i class="far fa-file detail_icon"></i>
+                            <i class="fas fa-comment detail_icon"></i>
+                        </div>                            
+                    </div>  
+                    
+                    <div class="collapse" id="collapseExample6">
+                        <div class="card-body">                            
+                            <form>
+                                <div class="form-group rewrite">
+                                    <div>
+                                        <i class="fas fa-calendar-alt detail_icon"></i>
+                                        <span class="date">Deadline</span>
+                                    </div>
+                                    <input type="date" class="form-control" placeholder="Date">
+                                    <input type="datetime" class="form-control" id="inputPassword2" placeholder="Time">                                   
+                                </div> 
+                                <div class="form-group rewrite">    
+                                        <i class="far fa-file detail_icon"></i>
+                                        <span class="date">File</span>
+                                    <div class="filename">aaaaaaa.zip
+                                        <i class="fas fa-plus-square icon-addfile"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group rewrite">
+                                    <i class="fas fa-comment detail_icon"></i>
+                                    <span class="date">Comment</span>
+                                    <div>
+                                        <textarea rows="3" class="col-xl-6"></textarea>
+                                    </div>
+                                </div>         
+                            </form>                                 
+                        </div>
+                        <button type="submit" class="btn col-xl-6">Save</button>
+                        <button type="reset" class="btn col-xl-6">Cancel</button>
+                        
+                    </div>
+                        
+                </div>
+                <!--Next card-->
+          
+                <!--事項清單-->
+                <div class="card col-xl-6 center">
+                    <div class="card-header">
+                        <div class="todo">
+                            <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <span class="type">Type Something Here...</span>
+                            <a data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample7">                          
+                            <i class="fas fa-pencil-alt icon"></i>
+                            </a>
+                            <i class="far fa-star staricon"></i>        
+                        </div>
+                        <div class="todo2">
+                            <i class="fas fa-calendar-alt detail_icon"> <span class="date">5/14</span></i>
+                            <i class="far fa-file detail_icon"></i>
+                            <i class="fas fa-comment detail_icon"></i>
+                        </div>                            
+                    </div>  
+                    
+                    <div class="collapse" id="collapseExample7">
+                        <div class="card-body">                            
+                            <form>
+                                <div class="form-group rewrite">
+                                    <div>
+                                        <i class="fas fa-calendar-alt detail_icon"></i>
+                                        <span class="date">Deadline</span>
+                                    </div>
+                                    <input type="date" class="form-control" placeholder="Date">
+                                    <input type="datetime" class="form-control" id="inputPassword2" placeholder="Time">                                   
+                                </div> 
+                                <div class="form-group rewrite">    
+                                        <i class="far fa-file detail_icon"></i>
+                                        <span class="date">File</span>
+                                    <div class="filename">aaaaaaa.zip
+                                        <i class="fas fa-plus-square icon-addfile"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group rewrite">
+                                    <i class="fas fa-comment detail_icon"></i>
+                                    <span class="date">Comment</span>
+                                    <div>
+                                        <textarea rows="3" class="col-xl-6"></textarea>
+                                    </div>
+                                </div>         
+                            </form>                                 
+                        </div>
+                        <button type="submit" class="btn col-xl-6">Save</button>
+                        <button type="reset" class="btn col-xl-6">Cancel</button>
+                        
+                    </div>
+                        
+                </div>
+                <!--next card-->
+                <!--事項清單-->
+                <div class="card col-xl-6 center">
+                        <div class="card-header">
+                            <div class="todo">
+                                <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <span class="type">Type Something Here...</span>
+                                <a data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false" aria-controls="collapseExample8">                          
+                                <i class="fas fa-pencil-alt icon"></i>
+                                </a>
+                                <i class="far fa-star staricon"></i>        
+                            </div>
+                            <div class="todo2">
+                                <i class="fas fa-calendar-alt detail_icon"> <span class="date">5/14</span></i>
+                                <i class="far fa-file detail_icon"></i>
+                                <i class="fas fa-comment detail_icon"></i>
+                            </div>                            
+                        </div>  
+                        
+                        <div class="collapse" id="collapseExample8">
+                            <div class="card-body">                            
+                                <form>
+                                    <div class="form-group rewrite">
+                                        <div>
+                                            <i class="fas fa-calendar-alt detail_icon"></i>
+                                            <span class="date">Deadline</span>
+                                        </div>
+                                        <input type="date" class="form-control" placeholder="Date">
+                                        <input type="datetime" class="form-control" id="inputPassword2" placeholder="Time">                                   
+                                    </div> 
+                                    <div class="form-group rewrite">    
+                                            <i class="far fa-file detail_icon"></i>
+                                            <span class="date">File</span>
+                                        <div class="filename">aaaaaaa.zip
+                                            <i class="fas fa-plus-square icon-addfile"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group rewrite">
+                                        <i class="fas fa-comment detail_icon"></i>
+                                        <span class="date">Comment</span>
+                                        <div>
+                                            <textarea rows="3" class="col-xl-6"></textarea>
+                                        </div>
+                                    </div>         
+                                </form>                                 
+                            </div>
+                            <button type="submit" class="btn col-xl-6">Save</button>
+                            <button type="reset" class="btn col-xl-6">Cancel</button>
+                            
+                        </div>
+                            
+                    </div>
+                        
+    </div>          
+    
+    
+    <!--Completed清單-->
+    <div class="tab-pane fade col-xl-12 add" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab">
+            <div class="card col-xl-6 center">
+                    <div class="card-header-line">
+                        <div class="todo">
+                                <input class="form-check-input inputtext" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <span class="type">Type Something Here...</span>
+                                <i class="fas fa-pencil-alt icon"></i>
+                                <i class="far fa-star staricon"></i>  
+                        </div>    
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            $(function () {
+              $('#myTab li:last-child a').tab('show')
+            })
+          </script>
+</body>
+</html>
